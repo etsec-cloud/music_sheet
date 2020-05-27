@@ -1,3 +1,25 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+	<ion-tabs>
+		<ion-tab-bar slot="bottom">
+			<ion-tab-button tab="home" [routerLink]="home">
+				<ion-icon name="home-outline"></ion-icon>
+				<ion-label>Accueil</ion-label>
+			</ion-tab-button>
+
+			<ion-tab-button tab="auddio" [routerLink]="auddio">
+				<ion-icon name="musical-notes-outline"></ion-icon>
+				<ion-label>Auddio</ion-label>
+			</ion-tab-button>
+
+			<ion-tab-button tab="search" [routerLink]="search">
+				<ion-icon name="search-outline"></ion-icon>
+				<ion-label>Recherche</ion-label>
+      </ion-tab-button>
+      
+      <ion-tab-button tab="favorites" [routerLink]="favorites">
+				<ion-icon name="star-outline"></ion-icon>
+				<ion-label>Favoris</ion-label>
+			</ion-tab-button>
+		</ion-tab-bar>
+	</ion-tabs>
 </ion-app>
