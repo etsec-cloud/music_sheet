@@ -13,8 +13,16 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-searchbar placeholder="Rechercher..." animated [(ngModel)]="search" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"> </ion-searchbar>
+
+	<ion-list *ngFor="let song of data">
+		<ion-item>
+			<ion-thumbnail slot="start">
+				<img src="{{ song.img }}" />
+			</ion-thumbnail>
+      <ion-label>{{ song.name }}</ion-label>
+      <ion-icon (click)="favorite(song.name)" [name]="isFavorite(song.name) ? 'star' : 'star-outline'"></ion-icon>
+		</ion-item>
+	</ion-list>
+
 </ion-content>
