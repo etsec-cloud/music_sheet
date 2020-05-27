@@ -1,3 +1,4 @@
+import { SpotifyService } from './../services/spotify.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,19 +8,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  data: any[] = [
-    {
-      name: 'Imagine Dragons',
-      img: 'https://i.scdn.co/image/01b36ca0f45f2f15117022a2754287a6ca1acdcc'
-    }
-  ];
+  results = [];
 
   favorites = [];
 
-  constructor() { }
+  isSearching = false;
+
+  constructor(public service: SpotifyService) { }
 
   ngOnInit() {
-    console.log(this.data[0]);
+    this.service.initAPI();
+  }
+
+  onInput(event) {
+    const search = event.srcElement.value;
+    this.isSearching = true;
+    this.results = [];
+
+    if (!search) {
+      this.isSearching = false;
+      return;
+    }
+
+    this.service.search(search).subscribe((data) => {
+
+      const temp = [];
+      temp[0] = data['artists']['items'];
+      temp[1] = data['tracks']['items'];
+
+      this.results = this.shuffle(temp[0].concat(temp[1]));
+      this.isSearching = false;
+    });
+  }
+
+  shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+  }
+
+  onCancel(event) {
+    this.results = [];
+    this.isSearching = false;
   }
 
   isFavorite(name) {
