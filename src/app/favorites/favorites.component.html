@@ -13,8 +13,25 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-toolbar>
+      <ion-segment value="all">
+          <ion-segment-button value="all">
+            <ion-label>Titres</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="favorites">
+            <ion-label>Artistes</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+
+
+
+    <ion-list *ngFor="let list of lists">
+        <ion-item>
+          <ion-avatar> <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"/></ion-avatar>
+          <ion-label>{{list.name}} </ion-label>
+        </ion-item>
+    </ion-list>
+
+
 </ion-content>

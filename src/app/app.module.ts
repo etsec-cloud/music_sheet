@@ -12,8 +12,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { SearchComponent } from './search/search.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 @NgModule({
-  declarations: [AppComponent, SearchComponent],
+  declarations: [AppComponent, SearchComponent, FavoritesComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
