@@ -1,0 +1,7 @@
+{
+  "name": "music_sheet",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
