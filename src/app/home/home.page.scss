@@ -25,3 +25,26 @@
 #container a {
   text-decoration: none;
 }
+
+ion-row {
+  text-align: center;
+  // white-space: nowrap;
+  // overflow-x: auto !important;
+}
+
+center{
+  margin: auto;
+}
+
+.hydrated{
+  margin: auto;
+}
+
+.left{
+  margin-left: 35px;
+}
+
+.item ion-thumbnail {
+  max-width: 3rem;
+  max-height: 3rem;
+}
