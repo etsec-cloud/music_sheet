@@ -7,16 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritesComponent implements OnInit {
   
-
+  test:boolean;
   lists: any[] = [ 
 
-    { name: "oui" }, 
-    { name: "odei" }, 
-    { name: "ai" }, 
-    { name: "abi" }, 
-    { name: "aabi" }, 
-    { name: "bi" }, 
-    { name: "cui" }, 
+    { name: "a", lastname:"g" }, 
+    { name: "b" ,lastname:"f" }, 
+    { name: "c",lastname:"e" }, 
+    { name: "d",lastname:"d" }, 
+    { name: "e" ,lastname:"c"}, 
+    { name: "f" ,lastname:"b"}, 
+    { name: "g" ,lastname:"a"}, 
 
   
   ];
@@ -25,22 +25,56 @@ export class FavoritesComponent implements OnInit {
 
   constructor() { }
 
+  testas(){
+   this.test = !this.test
+   this.ngOnInit();
+   console.log(this.test)
+  }
+
+  testos(){
+    this.test = !this.test
+    this.ngOnInit();
+    console.log(this.test)
+   }
+  
 
   ngOnInit() {
 
-    const sorted = this.lists.sort((a, b) => a.name > b.name ? 1 : -1);
+    if(!this.test){
+      const sorted = this.lists.sort((a, b) => a.name > b.name ? 1 : -1);
+      const grouped = sorted.reduce((groups, contact) => {
+        const letter = contact.name.charAt(0);
 
-    const grouped = sorted.reduce((groups, contact) => {
-           const letter = contact.name.charAt(0);
+        groups[letter] = groups[letter] || [];
+        groups[letter].push(contact);
+
+        return groups;
+
+      }, {});
+      
+      const result = Object.keys(grouped).map(key => ({key, lists: grouped[key]}));
+      console.log(result);
+      
+    }
+
+    else{
+      
+      const sorted = this.lists.sort((a, b) => a.lastname > b.name ? 1 : -1);
+      const grouped = sorted.reduce((groups, contact) => {
+        const letter = contact.lastname.charAt(0);
+ 
+        groups[letter] = groups[letter] || [];
+        groups[letter].push(contact);
+ 
+        return groups;
+        }, {});
+        
+      const result = Object.keys(grouped).map(key => ({key, lists: grouped[key]}));
+      console.log(result);
+    }
+
+
     
-           groups[letter] = groups[letter] || [];
-           groups[letter].push(contact);
-    
-           return groups;
-    }, {});
-    
-    const result = Object.keys(grouped).map(key => ({key, lists: grouped[key]}));
-    console.log(result);
 
   }
 

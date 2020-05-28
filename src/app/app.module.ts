@@ -1,3 +1,4 @@
+import { AuddioComponent } from './auddio/auddio.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -15,7 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SearchComponent } from './search/search.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 @NgModule({
-  declarations: [AppComponent, SearchComponent, FavoritesComponent],
+  declarations: [AppComponent, SearchComponent, FavoritesComponent, AuddioComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
