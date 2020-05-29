@@ -32,10 +32,6 @@ export class AuddioComponent implements OnInit {
       this.message = err.code;
     }
   );
-    /* setTimeout(() => {
-      this.isListening = false;
-    }, 3000); */
-
   }
 
 }
