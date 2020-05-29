@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Préférences
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="home" [text]="Retour"></ion-back-button>
+        </ion-buttons>
+      <ion-title>Paramètres - Préférences</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-list>
+
+  <br>
+  <ion-list-header>Votre niveau</ion-list-header>
+  <br>
+
+  <ion-item>
+    <ion-label>Débutant</ion-label>
+    <ion-checkbox color="tertiary" checked slot="end"></ion-checkbox>
+  </ion-item>
+
+    <ion-item>
+      <ion-label>Intermédiaire</ion-label>
+      <ion-checkbox color="tertiary" checked slot="end"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Expert</ion-label>
+      <ion-checkbox color="tertiary" checked slot="end"></ion-checkbox>
+    </ion-item>
+
+    <br>
+    <ion-list-header>Instruments</ion-list-header>
+    <br>
+
+    <ion-item>
+      <ion-checkbox color="tertiary" slot="end"></ion-checkbox>
+      <ion-label>Guitare Accoustique</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox color="tertiary" checked slot="end"></ion-checkbox>
+      <ion-label>Guitare Éléctrique</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox color="tertiary" slot="end"></ion-checkbox>
+      <ion-label>Batterie</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox color="tertiary" checked slot="end"></ion-checkbox>
+      <ion-label>Piano</ion-label>
+    </ion-item>
+
+    <br>
+    <ion-list-header>Genres préférés</ion-list-header>
+    <br>
+
+
+    <ion-item>
+      <ion-checkbox color="tertiary" checked slot="end"></ion-checkbox>
+      <ion-label>Rock</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox color="tertiary"  slot="end"></ion-checkbox>
+      <ion-label>Métal</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox color="tertiary" checked slot="end"></ion-checkbox>
+      <ion-label>Pop</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox color="tertiary" checked slot="end"></ion-checkbox>
+      <ion-label>Éléctronique</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox color="tertiary" slot="end"></ion-checkbox>
+      <ion-label>Blues</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox color="tertiary" slot="end"></ion-checkbox>
+      <ion-label>Hip Hop</ion-label>
+    </ion-item>
+  </ion-list>

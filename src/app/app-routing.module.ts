@@ -2,6 +2,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SearchComponent } from './search/search.component';
 import { AuddioComponent } from './auddio/auddio.component';
+import { SettingsDetailComponent } from './settings-detail/settings-detail.component';
 import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 import { HomePage } from './home/home.page';
 import { NgModule } from '@angular/core';
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'settings',
     component: SettingsComponent
+  },
+  {
+  path: 'preferences',
+  component: SettingsDetailComponent
   },
   {
     path: 'artist',
