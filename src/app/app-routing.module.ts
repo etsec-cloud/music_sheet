@@ -2,6 +2,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SearchComponent } from './search/search.component';
 import { AuddioComponent } from './auddio/auddio.component';
+import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 import { HomePage } from './home/home.page';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
@@ -28,9 +29,10 @@ const routes: Routes = [
     component: SettingsComponent
   },
   {
-    path: '**',
-    redirectTo: 'home'
-  }
+    path: 'artist',
+    component: ArtistDetailComponent
+  },
+
 ];
 
 @NgModule({
