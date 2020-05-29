@@ -32,6 +32,11 @@ const routes: Routes = [
     path: 'artist',
     component: ArtistDetailComponent
   },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
 
 ];
 
