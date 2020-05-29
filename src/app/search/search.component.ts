@@ -63,7 +63,6 @@ export class SearchComponent implements OnInit {
     } else {
       this.favorites.push(name);
     }
-    console.log('FAVORITE : ' + this.isFavorite(name));
   }
 
 }
