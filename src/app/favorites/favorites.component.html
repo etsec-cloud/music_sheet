@@ -25,15 +25,15 @@
     </ion-toolbar>
 
 
-
-    <ion-list *ngFor="let list of lists">
-        <ion-item>
+<ion-virtual-scroll [items]="lists" [headerFn]="seperateLetter()">
+    <ion-item-divider *virtualHeader="let header">
+      <ion-label> {{ header }}</ion-label>
+    </ion-item-divider>
+        <ion-item *virtualItem="let list">
           <ion-avatar> <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"/></ion-avatar>
           <ion-label id="titre" >titre {{list.name}} artiste {{list.lastname}} </ion-label>
         </ion-item>
-    </ion-list>
-
-
+</ion-virtual-scroll>
     
 
 
