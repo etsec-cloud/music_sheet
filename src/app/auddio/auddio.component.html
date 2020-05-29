@@ -16,5 +16,6 @@
   <div id="container">
     <strong>{{ isListening ? 'On écoute...' : 'Shazam avec le bouton' }}</strong>
     <ion-button [disabled]=isListening (click)="startListening()"  expand="block">SHAZAM</ion-button>
+    <strong *ngIf="message !=''">{{ message }}</strong>
   </div>
 </ion-content>

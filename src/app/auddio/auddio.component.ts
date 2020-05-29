@@ -1,9 +1,6 @@
-import { RecordingData, GenericResponse } from 'capacitor-voice-recorder';
+import { MediaCapture, MediaFile, CaptureError } from '@ionic-native/media-capture/ngx';
 import { Component, OnInit } from '@angular/core';
 import { AuddioService } from './../services/auddio.service';
-import { Plugins } from '@capacitor/core';
-
-const { VoiceRecorder } = Plugins;
 
 @Component({
   selector: 'app-auddio',
@@ -13,44 +10,28 @@ const { VoiceRecorder } = Plugins;
 export class AuddioComponent implements OnInit {
 
   isListening = false;
+  message = '';
 
-  constructor(private service: AuddioService) { }
+  constructor(private service: AuddioService, private mediaCapture: MediaCapture) { }
 
   ngOnInit() { }
 
   startListening() {
     this.isListening = true;
 
-    VoiceRecorder.hasAudioRecordingPermission().then((result: GenericResponse) => {
-      if (!result.value) {
-        VoiceRecorder.requestAudioRecordingPermission().then((audioPerm: GenericResponse) => {
-          if (audioPerm.value) {
-            // On peut enregistrer
-            VoiceRecorder.startRecording()
-              .then((record: GenericResponse) => {
-                setTimeout(() => {
-                  VoiceRecorder.stopRecording();
-                  console.log(record.value);
-                }, 5000);
-              })
-              .catch(error => console.log(error));
-          } else {
-            console.log('Tu veux po');
-            this.isListening = false;
-          }
-        });
-      } else {
-        // On peut enregistrer
-        VoiceRecorder.startRecording()
-          .then((record: GenericResponse) => {
-            setTimeout(() => {
-              VoiceRecorder.stopRecording();
-              console.log(record.value);
-            }, 5000);
-          })
-          .catch(error => console.log(error));
-      }
-    });
+    this.mediaCapture.captureAudio()
+  .then(
+    (data: MediaFile[]) => {
+      console.log(data);
+      this.isListening = false;
+      this.message = JSON.stringify(data);
+    },
+    (err: CaptureError) => {
+      console.error(err);
+      this.isListening = false;
+      this.message = err.code;
+    }
+  );
     /* setTimeout(() => {
       this.isListening = false;
     }, 3000); */
