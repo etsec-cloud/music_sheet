@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 
 @Component({
   selector: 'app-favorites',
@@ -11,6 +12,7 @@ export class FavoritesComponent implements OnInit {
   lists: any[] = [ 
 
     { name: "a", lastname:"g" }, 
+    { name: "aco", lastname:"gj" }, 
     { name: "b" ,lastname:"f" }, 
     { name: "c",lastname:"e" }, 
     { name: "d",lastname:"d" }, 
@@ -20,22 +22,22 @@ export class FavoritesComponent implements OnInit {
 
   
   ];
-  sorted: any;
 
+  
+  sorted: any;
 
   constructor() { }
 
   testas(){
-   this.test = !this.test
+   this.test = false
    this.ngOnInit();
-   console.log(this.test)
+  
   }
 
   testos(){
-    this.test = !this.test
+    this.test = true
     this.ngOnInit();
-    console.log(this.test)
-   }
+  }
   
 
   ngOnInit() {
@@ -54,28 +56,24 @@ export class FavoritesComponent implements OnInit {
       
       const result = Object.keys(grouped).map(key => ({key, lists: grouped[key]}));
       console.log(result);
-      
     }
 
     else{
       
-      const sorted = this.lists.sort((a, b) => a.lastname > b.name ? 1 : -1);
-      const grouped = sorted.reduce((groups, contact) => {
-        const letter = contact.lastname.charAt(0);
+      const sorted = this.lists.sort((a, b) => a.lastname > b.lastname ? 1 : -1);
+      const grouped = sorted.reduce((groups, lists) => {
+        const letter = lists.lastname.charAt(0);
  
         groups[letter] = groups[letter] || [];
-        groups[letter].push(contact);
+        groups[letter].push(this.lists);
  
         return groups;
         }, {});
         
       const result = Object.keys(grouped).map(key => ({key, lists: grouped[key]}));
       console.log(result);
+
     }
-
-
-    
-
   }
 
 }

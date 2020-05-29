@@ -18,7 +18,7 @@
           <ion-segment-button value="all" (click)="testas()">
             <ion-label>Titres</ion-label>
           </ion-segment-button>
-          <ion-segment-button value="favorites" (click)="testas()">
+          <ion-segment-button value="favorites" (click)="testos()">
             <ion-label>Artistes</ion-label>
           </ion-segment-button>
         </ion-segment>
@@ -29,9 +29,12 @@
     <ion-list *ngFor="let list of lists">
         <ion-item>
           <ion-avatar> <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"/></ion-avatar>
-          <ion-label>titre {{list.name}}  artiste {{list.lastname}} </ion-label>
+          <ion-label id="titre" >titre {{list.name}} artiste {{list.lastname}} </ion-label>
         </ion-item>
     </ion-list>
+
+
+    
 
 
 </ion-content>
