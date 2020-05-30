@@ -7,8 +7,9 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
   styleUrls: ['./favorites.component.scss'],
 })
 export class FavoritesComponent implements OnInit {
-
+  
   test: boolean;
+  letter:string;
   lists: any[] = [
 
     { name: 'a', lastname: 'g' },
@@ -30,22 +31,23 @@ export class FavoritesComponent implements OnInit {
     this.test = false;
     this.ngOnInit();
   }
-
   testos(){
     this.test = true;
     this.ngOnInit();
   }
-
   ngOnInit() {
     if(!this.test){
      this.lists.sort((a, b) => a.name > b.name ? 1 : -1);
+     const letter= this.lists[1].name.substr(0);
+     console.log(letter)
     }
     else{
      this.lists.sort((a, b) => a.lastname > b.lastname ? 1 : -1);
+     const letter= this.lists[1].lastname.substr(0);
+     console.log(letter)
     }
   }
-
-  seperateLetter(record, recordIndex, records){
+  separateLetter(record, recordIndex, records){
     if(recordIndex == 0){
       return record.name[0].toUpperCase();
     }
@@ -56,5 +58,4 @@ export class FavoritesComponent implements OnInit {
     }
     return null;
   }
-
 }
