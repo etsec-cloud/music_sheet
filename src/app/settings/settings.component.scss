@@ -10,6 +10,15 @@ ion-back-button{
 margin-top: 20px;
 }
 
-ion-item{
-	margin-bottom: 5px;
+
+#fleche{
+	font-size: 25px;
+	margin-left: 53vw;
+}
+
+#toggle{
+	--background: grey;
+	--background-checked: rgb(20, 209, 20);
+  	--handle-background: white;
+	--handle-background-checked: white;
 }
