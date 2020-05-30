@@ -54,7 +54,7 @@ export class SpotifyService {
       })
     };
 
-    return this.http.get(`${this.url}/search/?q=${query}&type=track,artist&market=FR&limit=15&offset=1`, httpOptions)
+    return this.http.get(`${this.url}/search/?q=${query}&type=track,artist&market=FR&limit=15&offset=0`, httpOptions)
     .pipe();
   }
 }

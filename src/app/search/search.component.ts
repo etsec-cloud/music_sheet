@@ -32,11 +32,7 @@ export class SearchComponent implements OnInit {
 
     this.service.search(search).subscribe((data) => {
 
-      const temp = [];
-      temp[0] = data['artists']['items'];
-      temp[1] = data['tracks']['items'];
-
-      this.results = this.shuffle(temp[0].concat(temp[1]));
+      this.results = data['tracks']['items'];
       this.isSearching = false;
     });
   }
