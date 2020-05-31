@@ -2,6 +2,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SearchComponent } from './search/search.component';
 import { AuddioComponent } from './auddio/auddio.component';
+import { PartitionsComponent } from './partitions/partitions.component';
+import { PartitionComponent } from './partition/partition.component';
 import { SettingsDetailComponent } from './settings-detail/settings-detail.component';
 import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 import { HomePage } from './home/home.page';
@@ -16,6 +18,14 @@ const routes: Routes = [
   {
     path: 'auddio',
     component: AuddioComponent
+  },
+  {
+  path: 'partitions',
+  component: PartitionsComponent
+  },
+  {
+    path: 'partition',
+    component: PartitionComponent
   },
   {
     path: 'search',

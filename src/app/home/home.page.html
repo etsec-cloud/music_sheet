@@ -7,11 +7,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Accueil</ion-title>
+      <ion-title class="title-center" size="large">Accueil</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
 
 <br>
   <ion-row >
@@ -31,12 +31,15 @@
   <h3 class="left">Récents</h3> <br>
   <ion-row class="scrollHori ion-nowrap">
     <ion-col size="4">
+      <ion-router-link href="partitions">
       <div >
         <ion-avatar class="center" >
           <img class="imageTaille" src="../../assets/img/evolve.jpg" style="max-width:2.5rem;max-height:2.5rem;">
         </ion-avatar>
         <p>Believer</p>
       </div>
+    </ion-router-link>
+
     </ion-col>
 
     <ion-col href="facebook.com" size="4">
@@ -119,36 +122,36 @@
     <ion-col size="4">
       <div >
         <ion-avatar class="center" >
-          <img class="imageTaille" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" style="max-width:2.5rem;max-height:2.5rem;">
+          <img class="imageTaille" src="../../assets/img/countingstarts.jpg" style="max-width:2.5rem;max-height:2.5rem;">
         </ion-avatar>
-        <p> son 1</p>
+        <p>Counting Stars</p>
       </div>
     </ion-col>
 
     <ion-col href="facebook.com" size="4">
       <div>
         <ion-avatar >
-          <img class="imageTaille" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" style="max-width:2.5rem;max-height:2.5rem;">
+          <img class="imageTaille" src="../../assets/img/havana.png" style="max-width:2.5rem;max-height:2.5rem;">
         </ion-avatar>
-        <p> son 2 </p>
+        <p>Havana</p>
       </div>
     </ion-col>
 
     <ion-col size="4">
       <div class="center">
         <ion-avatar >
-          <img class="imageTaille" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" style="max-width:2.5rem;max-height:2.5rem;">
+          <img class="imageTaille" src="../../assets/img/whatabout.jpg" style="max-width:2.5rem;max-height:2.5rem;">
         </ion-avatar>
-        <p> son 3 </p>
+        <p>What About Us</p>
       </div>
     </ion-col>
 
     <ion-col size="4">
       <div class="center">
         <ion-avatar >
-          <img class="imageTaille" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" style="max-width:2.5rem;max-height:2.5rem;">
+          <img class="imageTaille" src="../../assets/img/heyjoe.jpg" style="max-width:2.5rem;max-height:2.5rem;">
         </ion-avatar>
-        <p> truc 4 </p>
+        <p>Hey Joe</p>
       </div>
 
     </ion-col>
