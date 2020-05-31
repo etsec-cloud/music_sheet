@@ -1,3 +1,4 @@
+import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 import { AuddioComponent } from './auddio/auddio.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,7 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SearchComponent } from './search/search.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 @NgModule({
-  declarations: [AppComponent, SearchComponent, FavoritesComponent, AuddioComponent],
+  declarations: [AppComponent, SearchComponent, FavoritesComponent, AuddioComponent, ArtistDetailComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

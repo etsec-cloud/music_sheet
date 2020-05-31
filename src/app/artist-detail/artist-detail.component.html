@@ -22,12 +22,14 @@
       </ion-col>
       <ion-col size="4">
         <ion-thumbnail class="imageTaille" >
-          <img class="imageTaille" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" style="max-width:2.5rem;max-height:2.5rem;">
+          <img class="imageTaille" src="{{ data.images[0].url }}" style="max-width:2.5rem;max-height:2.5rem;">
         </ion-thumbnail>
       </ion-col>
       <ion-col size="4">
         <h2 class="genre">Genre</h2>
-        <p>blablabzrojgbepogher</p>
+        <ul *ngFor="let genre of data.genres" >
+          <li>{{ genre }}</li>
+        </ul>
       </ion-col>
       <ion-col size="2">
       </ion-col>

@@ -58,6 +58,23 @@ export class SpotifyService {
     .pipe();
   }
 
+  getArtist(artist: string) {
+    if(!this.init) {
+      this.initAPI();
+      return;
+    }
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: 'Bearer ' + this.token
+      })
+    };
+
+    return this.http.get(`${this.url}/search/?q=${artist}&type=artist&market=FR&limit=15&offset=0`, httpOptions)
+    .pipe();
+  }
+
   getTopTracks(id: string) {
     if(!this.init) {
       this.initAPI();

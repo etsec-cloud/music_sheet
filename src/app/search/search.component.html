@@ -16,7 +16,7 @@
   <ion-searchbar placeholder="Rechercher..." (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"> </ion-searchbar>
 
 	<ion-list *ngIf="results?.length > 0" >
-		<ion-item *ngFor="let result of results">
+		<ion-item *ngFor="let result of results" (click)="open(result)" >
 			<ion-avatar *ngIf="result.albums == null && result.images?.length > 0" slot="start">
 				<img src="{{ result.images[0].url }}" />
       </ion-avatar>

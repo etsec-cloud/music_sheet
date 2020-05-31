@@ -41,6 +41,10 @@ export class SearchComponent implements OnInit {
     return array.sort(() => Math.random() - 0.5);
   }
 
+  open(result) {
+    console.log(result);
+  }
+
   onCancel(event) {
     this.results = [];
     this.isSearching = false;

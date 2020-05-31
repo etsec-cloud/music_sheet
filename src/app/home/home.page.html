@@ -73,7 +73,7 @@
 <div>
   <h3 class="left">Artistes préférés</h3> <br>
   <ion-row class="scrollHori ion-nowrap">
-    <ion-col size="4">
+    <ion-col size="4" (click)="open('Gary Jules')">
       <div>
         <ion-thumbnail class="center" >
           <img class="imageTaille" src="../../assets/img/garyjules.jpg" style="max-width:2.5rem;max-height:2.5rem;">
@@ -82,7 +82,7 @@
       </div>
     </ion-col>
 
-    <ion-col href="facebook.com" size="4">
+    <ion-col size="4"(click)="open('Ed Sheeran')">
       <div>
         <ion-thumbnail >
           <img class="imageTaille" src="../../assets/img/edsheeran.jpg" style="max-width:2.5rem;max-height:2.5rem;">
@@ -91,7 +91,7 @@
       </div>
     </ion-col>
 
-    <ion-col size="4">
+    <ion-col size="4" (click)="open('Coldplay')">
       <div class="center">
         <ion-thumbnail >
           <img class="imageTaille" src="../../assets/img/coldplay.jpg" style="max-width:2.5rem;max-height:2.5rem;">
@@ -100,7 +100,7 @@
       </div>
     </ion-col>
 
-    <ion-col size="4">
+    <ion-col size="4" (click)="open('Avicii')">
       <div class="center">
         <ion-thumbnail >
           <img class="imageTaille" src="../../assets/img/avicii.jpg" style="max-width:2.5rem;max-height:2.5rem;">
