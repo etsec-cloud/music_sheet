@@ -54,7 +54,24 @@ export class SpotifyService {
       })
     };
 
-    return this.http.get(`${this.url}/search/?q=${query}&type=track,artist&market=FR&limit=25&offset=0`, httpOptions)
+    return this.http.get(`${this.url}/search/?q=${query}&type=track&market=FR&limit=25&offset=0`, httpOptions)
+    .pipe();
+  }
+
+  getTopTracks(id: string) {
+    if(!this.init) {
+      this.initAPI();
+      return;
+    }
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: 'Bearer ' + this.token
+      })
+    };
+
+    return this.http.get(`${this.url}/artists/${id}/?market=FR`, httpOptions)
     .pipe();
   }
 }
