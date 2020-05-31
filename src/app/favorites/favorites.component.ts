@@ -9,16 +9,16 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 export class FavoritesComponent implements OnInit {
   
   test: boolean;
-  letter:string;
+  oui:string;
   lists: any[] = [
 
-    { name: 'a', lastname: 'g' },
-    { name: 'b', lastname: 'f' },
-    { name: 'c', lastname: 'e' },
-    { name: 'd', lastname: 'd' },
-    { name: 'e', lastname: 'c' },
-    { name: 'f', lastname: 'b' },
-    { name: 'g', lastname: 'a' },
+    { name: 'a', lastname: 'g', letter: 'A', letter2: 'g' },
+    { name: 'b', lastname: 'f', letter: 'B', letter2: 'f' },
+    { name: 'c', lastname: 'e', letter: 'C', letter2: 'e' },
+    { name: 'd', lastname: 'd', letter: 'D', letter2: 'd' },
+    { name: 'e', lastname: 'c', letter: 'E', letter2: 'c' },
+    { name: 'f', lastname: 'b', letter: 'F', letter2: 'b' },
+    { name: 'g', lastname: 'a', letter: 'G', letter2: 'a' },
 
 
   ];
